@@ -1,0 +1,16 @@
+public function get_data($table,$where,$o_c=null,$o_v=null)
+	{
+		$this->db->where($where);
+		if($o_c && $o_v)
+		{
+			$this->db->order_by($o_c,$o_v);
+		}
+		$obj=$this->db->get($table);
+		
+		$data = array();
+		if($obj->num_rows() > 0)
+		{
+			$data = $obj->result_array();
+		}
+		return $data; 
+	}
