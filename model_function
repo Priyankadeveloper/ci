@@ -1,3 +1,10 @@
+call in view file
+---
+$obj=$this->common->get_data_w('matches',array('ug_status'=>1),'ug_id','DESC');
+
+--
+model
+--
 public function get_data($table,$where,$o_c=null,$o_v=null)
 	{
 		$this->db->where($where);
